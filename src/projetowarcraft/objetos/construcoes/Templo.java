@@ -1,4 +1,4 @@
-package projetowarcraft;
+package projetowarcraft.objetos.construcoes;
 
 public class Templo extends ConstrucoesQueNaoAtacam {
 

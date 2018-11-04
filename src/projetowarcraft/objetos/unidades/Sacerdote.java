@@ -1,4 +1,6 @@
-package projetowarcraft;
+package projetowarcraft.objetos.unidades;
+
+import projetowarcraft.objetos.Objeto;
 
 public class Sacerdote extends UnidadesQueNaoAtacam {
 

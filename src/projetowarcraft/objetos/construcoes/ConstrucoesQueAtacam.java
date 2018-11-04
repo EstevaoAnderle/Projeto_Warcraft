@@ -1,4 +1,6 @@
-package projetowarcraft;
+package projetowarcraft.objetos.construcoes;
+
+import projetowarcraft.objetos.Objeto;
 
 public class ConstrucoesQueAtacam extends Objeto {
 

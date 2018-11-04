@@ -1,4 +1,4 @@
-package projetowarcraft;
+package projetowarcraft.objetos.unidades;
 
 public class Andarilho extends UnidadesQueAtacam {
 

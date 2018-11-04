@@ -1,10 +1,10 @@
-package projetowarcraft;
+package projetowarcraft.mapa;
 
 import java.util.ArrayList;
 
 public class Mapa {
 
-    private ArrayList posicoes;
+    private ArrayList posicoes = new ArrayList<>();
 
     public void addPosicao(Posicao posicao) {
 

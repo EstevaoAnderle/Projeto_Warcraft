@@ -1,4 +1,6 @@
-package projetowarcraft;
+package projetowarcraft.objetos.unidades;
+
+import projetowarcraft.mapa.Posicao;
 
 public class Campones extends UnidadesQueAtacam {
 
