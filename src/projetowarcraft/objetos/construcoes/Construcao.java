@@ -1,7 +1,8 @@
 package projetowarcraft.objetos.construcoes;
 
 import projetowarcraft.objetos.Objeto;
+import projetowarcraft.objetos.unidades.Unidade;
 
-public class ConstrucoesQueNaoAtacam extends Objeto {
+public class Construcao extends Objeto {
 
 }

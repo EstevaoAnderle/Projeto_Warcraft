@@ -1,5 +1,11 @@
 package projetowarcraft.objetos.construcoes;
 
-public class Quartel extends ConstrucoesQueAtacam {
+import projetowarcraft.objetos.unidades.Unidade;
+
+public class Quartel extends Construcao {
+
+    void cria(Unidade unidade) {
+
+    }
 
 }

@@ -1,5 +1,9 @@
 package projetowarcraft.objetos.unidades;
 
-public class Grifo extends UnidadesQueAtacam {
+import projetowarcraft.objetos.Ataque;
 
+public class Grifo extends Unidade implements Ataque {
+
+    //@Override
+    //atacar;
 }

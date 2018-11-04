@@ -1,8 +1,11 @@
 package projetowarcraft.objetos.unidades;
 
-public class Andarilho extends UnidadesQueAtacam {
+import projetowarcraft.objetos.Ataque;
+import projetowarcraft.objetos.Objeto;
 
-    public void revive(UnidadesQueAtacam alvo) {
+public class Andarilho extends Unidade implements Ataque {
+
+    public void revive(Objeto objeto) {
 
     }
 

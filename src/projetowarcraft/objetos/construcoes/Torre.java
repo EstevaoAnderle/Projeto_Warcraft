@@ -1,5 +1,7 @@
 package projetowarcraft.objetos.construcoes;
 
-public class Torre extends ConstrucoesQueAtacam {
+import projetowarcraft.objetos.Ataque;
+
+public class Torre extends Construcao implements Ataque {
 
 }

@@ -2,7 +2,7 @@ package projetowarcraft.objetos.unidades;
 
 import projetowarcraft.objetos.Objeto;
 
-public class UnidadesQueNaoAtacam extends Objeto {
+public class Unidade extends Objeto {
 
     private double velocidade;
     private int armadura;

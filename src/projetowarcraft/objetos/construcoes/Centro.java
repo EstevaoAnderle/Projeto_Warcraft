@@ -1,5 +1,12 @@
 package projetowarcraft.objetos.construcoes;
 
-public class Centro extends ConstrucoesQueAtacam {
+import projetowarcraft.objetos.Ataque;
+import projetowarcraft.objetos.unidades.Unidade;
+
+public class Centro extends Construcao implements Ataque {
+
+    void cria(Unidade unidade) {
+
+    }
 
 }

@@ -1,5 +1,7 @@
 package projetowarcraft.objetos.unidades;
 
-public class Guerreiro extends UnidadesQueAtacam {
+import projetowarcraft.objetos.Ataque;
+
+public class Guerreiro extends Unidade implements Ataque {
 
 }
