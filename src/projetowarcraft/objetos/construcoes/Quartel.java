@@ -14,6 +14,10 @@ public class Quartel extends Construcao {
         super("ImagemQuartel.jpg", new Custo(0, 125, 0, 0), true, 350, 0, 0, raca, posicao);
     }
 
+    /**
+     * Cria guerreiros, verificando primeiramente se a construção está em pé e após,
+     * verificando se há recursos.
+     */
     void criaGuerreiro() {
         if (estado) {
             Guerreiro guerreiro = new Guerreiro(raca, posicao);
@@ -33,6 +37,10 @@ public class Quartel extends Construcao {
         }
     }
 
+    /**
+     * Cria cavaleiros, verificando primeiramente se a construção está em pé e após,
+     * verificando se há recursos.
+     */
     void criaCavaleiro() {
         if (estado) {
             Cavaleiro cavaleiro = new Cavaleiro(raca, posicao);
@@ -52,6 +60,10 @@ public class Quartel extends Construcao {
         }
     }
 
+    /**
+     * Cria arqueiros, verificando primeiramente se a construção está em pé e após,
+     * verificando se há recursos.
+     */
     void criaArqueiro() {
         if (estado) {
             Arqueiro arqueiro = new Arqueiro(raca, posicao);
@@ -72,6 +84,11 @@ public class Quartel extends Construcao {
     }
 
     //ADICIONAR VALIDAÇÃO PARA VER SE É HUMANO OU NÃO
+    
+    /**
+     * Cria grifos, verificando primeiramente se a construção está em pé e após,
+     * verificando se há recursos.
+     */
     void criaGrifo() {
         if (estado) {
             Grifo grifo = new Grifo(raca, posicao);

@@ -13,6 +13,10 @@ public class Centro extends Construcao implements Ataque {
         super("ImagemCentro.jpg", new Custo(0, 200, 0, 0), true, 600, 10, 8, raca, posicao);
     }
 
+    /**
+     * Cria camponeses, verificando primeiramente se a construção está em pé e após,
+     * verificando se há recursos.
+     */
     void cria() {
         if (estado) {
             Campones campones = new Campones(raca, posicao);

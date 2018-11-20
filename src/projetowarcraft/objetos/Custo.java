@@ -23,6 +23,14 @@ public class Custo {
         this.mana = mana;
     }
 
+    /**
+     * Adiciona suprimentos.
+     *
+     * @param comida
+     * @param madeira
+     * @param ouro
+     * @param mana
+     */
     public void adicionarSuprimentos(int comida, int madeira, int ouro, int mana) {
         this.comida = comida + comida;
         this.madeira = madeira + madeira;
@@ -30,6 +38,11 @@ public class Custo {
         this.mana = mana + mana;
     }
 
+    /**
+     * Diminui todos os suprimentos.
+     *
+     * @param custo
+     */
     public void diminuirSuprimentosTotais(Custo custo) {
         this.comida = comida - comida;
         this.madeira = madeira - madeira;
@@ -37,6 +50,14 @@ public class Custo {
         this.mana = mana - mana;
     }
 
+    /**
+     * Diminui suprimentos, podendo informar quais.
+     *
+     * @param comida
+     * @param madeira
+     * @param ouro
+     * @param mana
+     */
     public void diminuirSuprimentosEspecíficos(int comida, int madeira, int ouro, int mana) {
         this.comida = comida - comida;
         this.madeira = madeira - madeira;
@@ -44,7 +65,7 @@ public class Custo {
         this.mana = mana - mana;
     }
 
-    //Verificar se isso está correto
+    //VERIFICAR SE ISSO ESTÁ CORRETO
     public boolean compararCustos(Custo custo) {
         if (this.comida >= custo.getComida() && this.madeira >= custo.getMadeira()
                 && this.ouro >= custo.getOuro() && this.ouro >= custo.getOuro()) {

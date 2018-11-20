@@ -18,6 +18,11 @@ public class Unidade extends Objeto {
         this.armadura = armadura;
     }
 
+    /**
+     * Move o objeto conforme métodos criados na classe "Posição.java".
+     *
+     * @param direcao
+     */
     public void mover(String direcao) {
 
         if (estado) {

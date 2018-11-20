@@ -16,10 +16,20 @@ public class Posicao extends Point2D {
         this.setLocation(x, y);
     }
 
+    /**
+     * Move o objeto para o norte.
+     *
+     * @param velocidade
+     */
     public void moverParaNorte(double velocidade) {
         setY(y + velocidade);
     }
 
+    /**
+     * Move o objeto para o sul.
+     *
+     * @param velocidade
+     */
     public void moverParaSul(double velocidade) {
         if ((getY() - velocidade) > 0) {
             setY(y - velocidade);
@@ -28,10 +38,20 @@ public class Posicao extends Point2D {
         }
     }
 
+    /**
+     * Move o objeto para o leste.
+     *
+     * @param velocidade
+     */
     public void moverParaLeste(double velocidade) {
         setX(x + velocidade);
     }
 
+    /**
+     * Move o objeto para o oeste.
+     *
+     * @param velocidade
+     */
     public void moverParaOeste(double velocidade) {
         if ((getX() - velocidade) > 0) {
             setX(x - velocidade);
