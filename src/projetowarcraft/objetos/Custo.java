@@ -58,7 +58,7 @@ public class Custo {
      * @param ouro
      * @param mana
      */
-    public void diminuirSuprimentosEspecíficos(int comida, int madeira, int ouro, int mana) {
+    public void diminuirSuprimentosEspecificos(int comida, int madeira, int ouro, int mana) {
         this.comida = comida - comida;
         this.madeira = madeira - madeira;
         this.ouro = ouro - ouro;
@@ -68,7 +68,7 @@ public class Custo {
     //VERIFICAR SE ISSO ESTÁ CORRETO
     public boolean compararCustos(Custo custo) {
         if (this.comida >= custo.getComida() && this.madeira >= custo.getMadeira()
-                && this.ouro >= custo.getOuro() && this.ouro >= custo.getOuro()) {
+                && this.ouro >= custo.getOuro() && this.mana >= custo.getMana()) {
             return false;
         }
         return true;
