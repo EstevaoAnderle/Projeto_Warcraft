@@ -23,7 +23,7 @@ public class Quartel extends Construcao {
             Guerreiro guerreiro = new Guerreiro(raca, posicao);
             if (raca.getCusto().compararCustos(guerreiro.getCusto())) {
                 if (raca.podeCriar()) {
-                    raca.adicionarUnidade(new Guerreiro(raca, new Posicao(x, y)));
+                    raca.adicionarUnidade(new Guerreiro(raca, posicao));
                     System.out.println("Guerreiro criado.");
                 } else {
                     System.out.println("A quantidade máxima da população foi atingida.");
@@ -46,7 +46,7 @@ public class Quartel extends Construcao {
             Cavaleiro cavaleiro = new Cavaleiro(raca, posicao);
             if (raca.getCusto().compararCustos(cavaleiro.getCusto())) {
                 if (raca.podeCriar()) {
-                    raca.adicionarUnidade(new Cavaleiro(raca, new Posicao(x, y)));
+                    raca.adicionarUnidade(new Cavaleiro(raca, posicao));
                     System.out.println("Guerreiro criado.");
                 } else {
                     System.out.println("A quantidade máxima da população foi atingida.");
@@ -69,7 +69,7 @@ public class Quartel extends Construcao {
             Arqueiro arqueiro = new Arqueiro(raca, posicao);
             if (raca.getCusto().compararCustos(arqueiro.getCusto())) {
                 if (raca.podeCriar()) {
-                    raca.adicionarUnidade(new Arqueiro(raca, new Posicao(x, y)));
+                    raca.adicionarUnidade(new Arqueiro(raca, posicao));
                     System.out.println("Arqueiro criado.");
                 } else {
                     System.out.println("A quantidade máxima da população foi atingida.");
@@ -94,7 +94,7 @@ public class Quartel extends Construcao {
             Grifo grifo = new Grifo(raca, posicao);
             if (raca.getCusto().compararCustos(grifo.getCusto())) {
                 if (raca.podeCriar()) {
-                    raca.adicionarUnidade(new Grifo(raca, new Posicao(x, y)));
+                    raca.adicionarUnidade(new Grifo(raca, posicao));
                     System.out.println("Grifo criado.");
                 } else {
                     System.out.println("A quantidade máxima da população foi atingida.");

@@ -22,7 +22,7 @@ public class Centro extends Construcao implements Ataque {
             Campones campones = new Campones(raca, posicao);
             if (raca.getCusto().compararCustos(campones.getCusto())) {
                 if (raca.podeCriar()) {
-                    raca.adicionarUnidade(new Campones(raca, new Posicao(x, y)));
+                    raca.adicionarUnidade(new Campones(raca, posicao));
                     System.out.println("Camponês criado.");
                 } else {
                     System.out.println("A quantidade máxima da população foi atingida.");

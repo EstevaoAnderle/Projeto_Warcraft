@@ -3,9 +3,9 @@ package projetowarcraft.mapa;
 import java.awt.geom.Point2D;
 
 /**
- * Guarda a informação da posição (X,Y) de um objeto
+ * Guarda a informacao da posicao (X,Y) de um objeto
  *
- * @author Estevão, Rafael
+ * @author Estevao Anderle, Rafael de Paula
  */
 public class Posicao extends Point2D {
 
@@ -20,21 +20,24 @@ public class Posicao extends Point2D {
      * Move o objeto para o norte.
      *
      * @param velocidade
+     * @return a nova posicao do objeto no mapa
      */
-    public void moverParaNorte(double velocidade) {
-        setY(y + velocidade);
+    public Posicao moverParaNorte(double velocidade) {
+        return Mapa.getPosicao(this.x, this.y + velocidade);
     }
 
     /**
      * Move o objeto para o sul.
      *
      * @param velocidade
+     * @return a nova posicao do objeto no mapa
      */
-    public void moverParaSul(double velocidade) {
+    public Posicao moverParaSul(double velocidade) {
         if ((getY() - velocidade) > 0) {
-            setY(y - velocidade);
+            return Mapa.getPosicao(this.x, this.y - velocidade);
         } else {
-            System.out.println("Não é possível realizar essa ação.");
+            System.out.println("Nao e possivel realizar essa acao.");
+            return this;
         }
     }
 
@@ -42,26 +45,29 @@ public class Posicao extends Point2D {
      * Move o objeto para o leste.
      *
      * @param velocidade
+     * @return a nova posicao do objeto no mapa
      */
-    public void moverParaLeste(double velocidade) {
-        setX(x + velocidade);
+    public Posicao moverParaLeste(double velocidade) {
+        return Mapa.getPosicao(this.x + velocidade, this.y);
     }
 
     /**
      * Move o objeto para o oeste.
      *
      * @param velocidade
+     * @return a nova posicao do objeto no mapa
      */
-    public void moverParaOeste(double velocidade) {
+    public Posicao moverParaOeste(double velocidade) {
         if ((getX() - velocidade) > 0) {
-            setX(x - velocidade);
+            return Mapa.getPosicao(this.x - velocidade, this.y);
         } else {
-            System.out.println("Não é possível realizar essa ação.");
+        	System.out.println("Nao e possivel realizar essa acao.");
+            return this;
         }
     }
 
     /**
-     * Define a localização X do objeto
+     * Define a localizacao X do objeto
      *
      * @param x
      */
@@ -70,7 +76,7 @@ public class Posicao extends Point2D {
     }
 
     /**
-     * Define a localização Y do objeto
+     * Define a localizacao Y do objeto
      *
      * @param y
      */

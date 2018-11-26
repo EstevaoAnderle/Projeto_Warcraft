@@ -3,40 +3,40 @@ package projetowarcraft.mapa;
 import java.util.ArrayList;
 
 /**
- * Guarda todas as posições dos objetos presentes no jogo
- * @author Estevão, Rafael
+ * Guarda todas as posicoes dos objetos presentes no jogo
+ * @author Estevao Anderle, Rafael de Paula
  */
 public class Mapa {
 
-    private ArrayList posicoes = new ArrayList<>();
+    private static ArrayList<Posicao> posicoes = new ArrayList<>();
 
     /**
-     * Acrescenta uma posição no mapa
+     * Acrescenta uma posicao mapa
      * @param posicao 
-     * @return a própria posição adicionada
+     * @return a propria posicao adicionada
      */
-    private Posicao addPosicao(double x, double y) {
+    private static Posicao addPosicao(double x, double y) {
         Posicao posicao = new Posicao(x, y);
-        this.posicoes.add(posicao);
+        Mapa.posicoes.add(posicao);
         return posicao;
     }
 
     /**
-     * Retorna o objeto de uma posição desejada. Se ele não existir,
+     * Retorna o objeto de uma posicao desejada. Se ele nao existir,
      * cria um novo.
      * 
      * @param x
      * @param y
-     * @return posição com X,Y desejados
+     * @return posicao com X,Y desejados
      */
-    public Posicao getPosicao(double x, double y) {
-        for(Object p : this.posicoes){
+    public static Posicao getPosicao(double x, double y) {
+        for(Object p : Mapa.posicoes){
             Posicao pos = (Posicao) p;
             if(pos.getX() == x && pos.getY() == y){
                 return pos;
             }
         }
-        return this.addPosicao(x, y);
+        return Mapa.addPosicao(x, y);
     }
 
 }

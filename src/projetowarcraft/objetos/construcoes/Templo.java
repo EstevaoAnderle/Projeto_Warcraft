@@ -21,7 +21,7 @@ public class Templo extends Construcao {
             Sacerdote sacerdote = new Sacerdote(raca, posicao);
             if (raca.getCusto().compararCustos(sacerdote.getCusto())) {
                 if (raca.podeCriar()) {
-                    raca.adicionarUnidade(new Sacerdote(raca, new Posicao(x, y)));
+                    raca.adicionarUnidade(new Sacerdote(raca, posicao));
                     System.out.println("Sacerdote criado.");
                 } else {
                     System.out.println("A quantidade máxima da população foi atingida.");
@@ -46,7 +46,7 @@ public class Templo extends Construcao {
             Andarilho andarilho = new Andarilho(raca, posicao);
             if (raca.getCusto().compararCustos(andarilho.getCusto())) {
                 if (raca.podeCriar()) {
-                    raca.adicionarUnidade(new Andarilho(raca, new Posicao(x, y)));
+                    raca.adicionarUnidade(new Andarilho(raca, posicao));
                     System.out.println("Andarilho criado.");
                 } else {
                     System.out.println("A quantidade máxima da população foi atingida.");

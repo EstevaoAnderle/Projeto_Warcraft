@@ -1,13 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package projetowarcraft.objetos;
 
 /**
- *
- * @author estev
+ * Armazena o custo de um objeto e faz
+ * as devidas comparações para sua criação.
+ * 
+ * @author Estevao Anderle, Rafael de Paula
  */
 public class Custo {
 
@@ -30,19 +27,19 @@ public class Custo {
      * @param madeira
      * @param ouro
      * @param mana
-     */
+     *
     public void adicionarSuprimentos(int comida, int madeira, int ouro, int mana) {
         this.comida = comida + comida;
         this.madeira = madeira + madeira;
         this.ouro = ouro + ouro;
         this.mana = mana + mana;
-    }
+    }*/
 
     /**
      * Diminui todos os suprimentos.
      *
      * @param custo
-     */
+     *
     public void diminuirSuprimentosTotais(Custo custo) {
         this.comida = comida - comida;
         this.madeira = madeira - madeira;
@@ -57,15 +54,15 @@ public class Custo {
      * @param madeira
      * @param ouro
      * @param mana
-     */
+     *
     public void diminuirSuprimentosEspecificos(int comida, int madeira, int ouro, int mana) {
         this.comida = comida - comida;
         this.madeira = madeira - madeira;
         this.ouro = ouro - ouro;
         this.mana = mana - mana;
-    }
+    }*/
 
-    //VERIFICAR SE ISSO ESTÁ CORRETO
+    //VERIFICAR SE ISSO ESTÃ� CORRETO
     public boolean compararCustos(Custo custo) {
         if (this.comida >= custo.getComida() && this.madeira >= custo.getMadeira()
                 && this.ouro >= custo.getOuro() && this.mana >= custo.getMana()) {

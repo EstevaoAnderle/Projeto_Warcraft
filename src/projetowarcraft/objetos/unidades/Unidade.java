@@ -19,7 +19,8 @@ public class Unidade extends Objeto {
     }
 
     /**
-     * Move o objeto conforme métodos criados na classe "Posição.java".
+     * Move a unidade conforme direcao informada,
+     * levando em considera��o velocidade da mesma.
      *
      * @param direcao
      */
@@ -28,20 +29,21 @@ public class Unidade extends Objeto {
         if (estado) {
             switch (direcao.toLowerCase()) {
                 case "norte":
-                    posicao.moverParaNorte(velocidade);
+                    posicao = posicao.moverParaNorte(velocidade);
                 case "sul":
-                    posicao.moverParaSul(velocidade);
+                    posicao = posicao.moverParaSul(velocidade);
                 case "leste":
-                    posicao.moverParaLeste(velocidade);
+                    posicao = posicao.moverParaLeste(velocidade);
                 case "oeste":
-                    posicao.moverParaOeste(velocidade);
+                    posicao = posicao.moverParaOeste(velocidade);
                 default:
-                    System.out.println("Verifica a opção informada.");
+                    System.out.println("Verifica a opcao informada.");
             }
         } else {
-            System.out.println("Você está tentando mover algo que está morto.");
+            System.out.println("Voce esta tentando mover algo que esta morto.");
         }
 
     }
+
 
 }
