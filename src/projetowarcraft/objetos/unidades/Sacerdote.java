@@ -18,5 +18,9 @@ public class Sacerdote extends Unidade {
     public void reza() {
 
     }
+    
+    void atacar(Objeto alvo) {
+    	System.out.println("Unidades do tipo Sacerdote não são capazes de atacar.");
+    }
 
 }

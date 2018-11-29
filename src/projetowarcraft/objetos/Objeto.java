@@ -1,6 +1,5 @@
 package projetowarcraft.objetos;
 
-import java.util.HashMap;
 import projetowarcraft.mapa.Posicao;
 import projetowarcraft.racas.Raca;
 
@@ -10,25 +9,38 @@ public abstract class Objeto {
     protected Custo custo;
     protected boolean estado;
     protected int hp;
+    protected Posicao posicao;
+    
+    protected Raca raca;
     protected int pontosAtaque;
     protected double alcance;
-    protected Raca raca;
-    protected Posicao posicao;
 
-    public Objeto(String imagem, Custo custo, boolean estado, int hp,
-            int pontosAtaque, double alcance, Raca raca, Posicao posicao) {
+    public Objeto(String imagem, Custo custo, boolean estado, int hp, 
+    		Raca raca, Posicao posicao) {
         this.imagem = imagem;
         this.custo = custo;
         this.estado = estado;
         this.hp = hp;
-        this.pontosAtaque = pontosAtaque;
-        this.alcance = alcance;
         this.raca = raca;
         this.posicao = posicao;
     }
+    
+    public Objeto(String imagem, Custo custo, boolean estado, int hp, 
+    		Raca raca, Posicao posicao, int pontosAtaque, double alcance) {
+        this.imagem = imagem;
+        this.custo = custo;
+        this.estado = estado;
+        this.hp = hp;
+        this.raca = raca;
+        this.posicao = posicao;
+        this.pontosAtaque = pontosAtaque;
+        this.alcance = alcance;
+    }
 
     public void recebeDano(int pontos) {
-
+    	this.hp -= pontos;
+    	if(this.hp < 0)
+    		hp = 0;
     }
 
     //Getters
@@ -44,16 +56,20 @@ public abstract class Objeto {
         return hp;
     }
 
-    public int getPontosAtaque() {
-        return pontosAtaque;
-    }
-
     public Custo getCusto() {
         return custo;
     }
 
     public Raca getRaca() {
         return raca;
+    }
+    
+    public int getPontosAtaque() {
+    	return pontosAtaque;
+    }
+    
+    public double getAlcance() {
+    	return alcance;
     }
 
     //Setters
