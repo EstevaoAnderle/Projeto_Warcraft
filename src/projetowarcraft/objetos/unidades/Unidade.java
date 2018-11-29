@@ -1,11 +1,12 @@
 package projetowarcraft.objetos.unidades;
 
 import projetowarcraft.mapa.Posicao;
+import projetowarcraft.objetos.Ataque;
 import projetowarcraft.objetos.Custo;
 import projetowarcraft.objetos.Objeto;
 import projetowarcraft.racas.Raca;
 
-public class Unidade extends Objeto {
+public abstract class Unidade extends Objeto implements Ataque {
 
     private double velocidade;
     private int armadura;
@@ -13,7 +14,7 @@ public class Unidade extends Objeto {
     public Unidade(String imagem, Custo custo, boolean estado, int hp,
             int pontosAtaque, double alcance, Raca raca, Posicao posicao,
             double velocidade, int armadura) {
-        super(imagem, custo, estado, hp, pontosAtaque, alcance, raca, posicao);
+        super(imagem, custo, estado, hp, raca, posicao, pontosAtaque, alcance);
         this.velocidade = velocidade;
         this.armadura = armadura;
     }
@@ -22,7 +23,6 @@ public class Unidade extends Objeto {
      * Move a unidade conforme direcao informada,
      * levando em consideração velocidade da mesma.
      *
-     * @param direcao
      */
     public void mover(String direcao) {
 

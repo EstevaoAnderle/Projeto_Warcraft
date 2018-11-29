@@ -40,7 +40,7 @@ public abstract class Objeto {
     public void recebeDano(int pontos) {
     	this.hp -= pontos;
     	if(this.hp < 0)
-    		hp = 0;
+    		this.hp = 0;
     }
 
     //Getters

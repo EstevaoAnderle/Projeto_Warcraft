@@ -15,8 +15,6 @@ public class Raca {
     private int madeira;
     private int mana;
     private int ouro;
-    private Custo custo;
-    private Posicao posicao;
     private ArrayList<Unidade> unidades = new ArrayList<>();
     private ArrayList<Construcao> construcoes = new ArrayList<>();
     private boolean extinta = false;
@@ -27,7 +25,6 @@ public class Raca {
 
     public Raca(char tipo, Posicao posicao) {
         this.tipo = tipo;
-        this.posicao = posicao;
         construcoes.add(new Centro(new Posicao(1, 1), this));
         unidades.add(new Campones(this, new Posicao(2, 2)));
         unidades.add(new Campones(this, new Posicao(3, 3)));
@@ -60,10 +57,6 @@ public class Raca {
         return construcoes.get(posicao);
     }
 
-    public Custo getCusto() {
-        return custo;
-    }
-
     /**
      * @return the comida
      */
@@ -91,9 +84,12 @@ public class Raca {
     public int getOuro() {
         return ouro;
     }
+    
+    public char getTipo() {
+    	return tipo;
+    }
 
-    //VERIFICAR MÉTODOS PRA ADICIONAR OS RECURSOS
-    //VERIFICAR NECESSIDADE DE UM RECURSO PRA CONSUMIR MANA
+   
     public void exibirRecursos() {
         System.out.println("Total de recursos:");
         System.out.println("Comida: " + getComida());
@@ -121,7 +117,7 @@ public class Raca {
 
     private void numeroUnidades() {
         for (Unidade unidade : unidades) {
-            if (unidade.getEstado()) {//Verifica se a unidade está viva
+            if (unidade.getEstado()) {//Verifica se a unidade estÃ¡ viva
                 populacao++;
             }
         }
@@ -129,7 +125,7 @@ public class Raca {
 
     private void numeroConstrucoes() {
         for (Construcao construcao : construcoes) {
-            if (construcao.getEstado()) {//Verifica se a construção está em pé
+            if (construcao.getEstado()) {//Verifica se a construÃ§Ã£o estÃ¡ em pÃ©
                 nroConstrucoes++;
             }
         }
@@ -137,8 +133,59 @@ public class Raca {
 
     public void verificaRacaExtinta() {
         if (populacao == 0 && nroConstrucoes == 0) {
-            System.out.println("A raça foi extinta.");
+            System.out.println("A raca foi extinta.");
         }
+    }
+    
+    /**
+     * Adiciona suprimentos.
+     *
+     * @param comida
+     * @param madeira
+     * @param ouro
+     * @param mana
+     */
+    public void adicionarSuprimentos(int comida, int madeira, int ouro, int mana) {
+        this.comida = comida + comida;
+        this.madeira = madeira + madeira;
+        this.ouro = ouro + ouro;
+        this.mana = mana + mana;
+    }
+
+    /**
+     * Diminui os suprimentos da raça com base no custo
+     * do objeto criado.
+     *
+     * @param Custo
+     */
+    public void diminuirSuprimentos(Custo custo) {
+        this.comida = comida - comida;
+        this.madeira = madeira - madeira;
+        this.ouro = ouro - ouro;
+        this.mana = mana - mana;
+    }
+
+    /**
+     * Diminui suprimentos, podendo informar quais.
+     *
+     * @param comida
+     * @param madeira
+     * @param ouro
+     * @param mana
+     */
+    public void diminuirSuprimentosEspecificos(int comida, int madeira, int ouro, int mana) {
+        this.comida = comida - comida;
+        this.madeira = madeira - madeira;
+        this.ouro = ouro - ouro;
+        this.mana = mana - mana;
+    }
+    
+    public boolean calculaSuprimentos(Custo custo) {
+        if (this.comida >= custo.getComida() && this.madeira >= custo.getMadeira()
+                && this.ouro >= custo.getOuro() && this.mana >= custo.getMana()) {
+            return false;
+        }
+        return true;
     }
 
 }

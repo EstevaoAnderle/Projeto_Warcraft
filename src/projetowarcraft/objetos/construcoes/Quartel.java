@@ -40,9 +40,10 @@ public class Quartel extends Construcao {
      * Cria arqueiros, verificando primeiramente se a construção está em pé e após,
      * verificando se há recursos.
      */
-    void criaArqueiro() {
-    	Arqueiro unidade = new Arqueiro(raca, posicao);
+    Arqueiro criaArqueiro() {
+    	Arqueiro unidade = new Arqueiro(raca, posicao); 
         this.cria(unidade);
+        return unidade;
     }
 
     
