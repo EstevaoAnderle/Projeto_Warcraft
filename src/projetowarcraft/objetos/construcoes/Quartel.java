@@ -16,42 +16,26 @@ public class Quartel extends Construcao {
         super("ImagemQuartel.jpg", new Custo(0, 125, 0, 0), true, 350, raca, posicao);
     }
     
-    /**
-     * Cria guerreiros, verificando primeiramente se a construção está em pé e após,
-     * verificando se há recursos.
-     */
-    Guerreiro criaGuerreiro() {
+    
+    public void criaGuerreiro() {
     	Guerreiro unidade = new Guerreiro(raca, posicao); 
         this.cria(unidade);
-        return unidade;
-    }
-
-    /**
-     * Cria cavaleiros, verificando primeiramente se a construção está em pé e após,
-     * verificando se há recursos.
-     */
-    Cavaleiro criaCavaleiro() {
-    	Cavaleiro unidade = new Cavaleiro(raca, posicao); 
-        this.cria(unidade);
-        return unidade;
-    }
-
-    /**
-     * Cria arqueiros, verificando primeiramente se a construção está em pé e após,
-     * verificando se há recursos.
-     */
-    Arqueiro criaArqueiro() {
-    	Arqueiro unidade = new Arqueiro(raca, posicao); 
-        this.cria(unidade);
-        return unidade;
     }
 
     
-    /**
-     * Cria grifos, verificando primeiramente se a construção está em pé e após,
-     * verificando se há recursos.
-     */
-    void criaGrifo() {
+    public void criaCavaleiro() {
+    	Cavaleiro unidade = new Cavaleiro(raca, posicao); 
+        this.cria(unidade);
+    }
+
+    
+    public void criaArqueiro() {
+    	Arqueiro unidade = new Arqueiro(raca, posicao); 
+        this.cria(unidade);
+    }
+
+    
+    public void criaGrifo() {
     	if(this.raca.getTipo() != 'H') {
     		System.out.println("Apenas humanos podem gerar unidades do tipo Grifo.");
     		return;

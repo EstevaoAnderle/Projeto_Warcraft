@@ -30,19 +30,46 @@ public abstract class Unidade extends Objeto implements Ataque {
             switch (direcao.toLowerCase()) {
                 case "norte":
                     posicao = posicao.moverParaNorte(velocidade);
+                    break;
                 case "sul":
                     posicao = posicao.moverParaSul(velocidade);
+                    break;
                 case "leste":
                     posicao = posicao.moverParaLeste(velocidade);
+                    break;
                 case "oeste":
                     posicao = posicao.moverParaOeste(velocidade);
+                    break;
                 default:
                     System.out.println("Verifica a opcao informada.");
+                    break;
             }
         } else {
             System.out.println("Voce esta tentando mover algo que esta morto.");
         }
 
+    }
+    
+    @Override
+    public void verificaMorte() {
+    	if(this.hp <= 0) {
+    		raca.removerUnidade(this);
+    	}
+    }
+    
+    @Override
+    public void atacar(Objeto alvo) {
+    	this.atacar(this, alvo);
+    }
+    
+    @Override
+    public void recebeDano(int pontos) {
+    	pontos -= this.armadura;
+    	super.recebeDano(pontos);
+    }
+    
+    public int getArmadura() {
+    	return this.armadura;
     }
 
 

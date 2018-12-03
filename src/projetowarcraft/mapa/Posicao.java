@@ -15,6 +15,11 @@ public class Posicao extends Point2D {
     public Posicao(double x, double y) {
         this.setLocation(x, y);
     }
+    
+    @Override
+    public String toString() {
+    	return "(" + this.x + ", " + this.y + ")";
+    }
 
     /**
      * Move o objeto para o norte.

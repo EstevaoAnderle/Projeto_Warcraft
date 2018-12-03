@@ -20,20 +20,25 @@ public abstract class Construcao extends Objeto {
     }
 
     protected void cria(Unidade unidade) {
-    	if (estado) {
-			if (raca.calculaSuprimentos(unidade.getCusto())) {
-                if (raca.podeCriar()) {
-                    raca.adicionarUnidade(unidade);
-                    System.out.println("Unidade criada.");
-                } else {
-                    System.out.println("A quantidade maxima da populacao foi atingida.");
-                }
-                raca.diminuirSuprimentos(unidade.getCusto());
-            } else {
-                System.out.println("Recursos nao sao suficientes!");
-            }
-        } else {
-            System.out.println("Essa construcao ja esta destruida.");
+    	
+    	if (!raca.podeCriar(unidade)) {
+        	return;
         }
+    	if (!estado) {
+    		System.out.println("Essa construcao ja esta destruida.");
+    		return;
+    	}
+ 
+        raca.adicionarUnidade(unidade);
+        System.out.println("Unidade criada.");
+    
     }
+    
+    @Override
+    public void verificaMorte() {
+    	if(this.hp <= 0) {
+    		raca.removerConstrucao(this);
+    	}
+    }
+    
 }

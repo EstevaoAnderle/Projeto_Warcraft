@@ -1,6 +1,7 @@
 package projetowarcraft.objetos;
 
 import projetowarcraft.mapa.Posicao;
+import projetowarcraft.objetos.unidades.Unidade;
 import projetowarcraft.racas.Raca;
 
 public abstract class Objeto {
@@ -9,6 +10,7 @@ public abstract class Objeto {
     protected Custo custo;
     protected boolean estado;
     protected int hp;
+    protected int hpMaximo;
     protected Posicao posicao;
     
     protected Raca raca;
@@ -21,6 +23,7 @@ public abstract class Objeto {
         this.custo = custo;
         this.estado = estado;
         this.hp = hp;
+        this.hpMaximo = hp;
         this.raca = raca;
         this.posicao = posicao;
     }
@@ -36,12 +39,28 @@ public abstract class Objeto {
         this.pontosAtaque = pontosAtaque;
         this.alcance = alcance;
     }
+    
+    @Override
+    public String toString() {
+    	String ret = "[" + this.raca.getTipo() + "] ";
+    	ret += this.getClass().getSimpleName();
+    	ret += " (HP " + this.hp + ")";
+    	ret += " em " + posicao.toString();
+    	return ret;
+    }
 
     public void recebeDano(int pontos) {
     	this.hp -= pontos;
     	if(this.hp < 0)
     		this.hp = 0;
+    	this.verificaMorte();
     }
+    
+    public void restaurarVida() {
+    	this.hp = this.hpMaximo;
+    }
+    
+    public abstract void verificaMorte();
 
     //Getters
     public Posicao getPosicao() {
