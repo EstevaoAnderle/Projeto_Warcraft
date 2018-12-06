@@ -24,12 +24,18 @@ public class Raca {
 
     public Raca(char tipo, Posicao posicao, int comida, int madeira, int ouro, int mana) {
         this.tipo = tipo;
-        construcoes.add(new Centro(this, posicao));
-        unidades.add(new Campones(this, posicao));
-        unidades.add(new Campones(this, posicao));
-        unidades.add(new Campones(this, posicao));
-        unidades.add(new Campones(this, posicao));
-        unidades.add(new Campones(this, posicao));
+        adicionarConstrucao(new Centro(this, posicao));
+//        construcoes.add(new Centro(this, posicao));
+        adicionarUnidade(new Campones(this, posicao));
+        adicionarUnidade(new Campones(this, posicao));
+        adicionarUnidade(new Campones(this, posicao));
+        adicionarUnidade(new Campones(this, posicao));
+        adicionarUnidade(new Campones(this, posicao));
+//        unidades.add(new Campones(this, posicao));
+//        unidades.add(new Campones(this, posicao));
+//        unidades.add(new Campones(this, posicao));
+//        unidades.add(new Campones(this, posicao));
+//        unidades.add(new Campones(this, posicao));
         this.adicionarSuprimentos(comida, madeira, ouro, mana);
         this.calculaCapacidadePopulacional();
     }
@@ -47,16 +53,16 @@ public class Raca {
         this.populacao += 1;
         this.diminuirSuprimentos(unidade.getCusto());
     }
-    
+
     public void reviverUnidade(Unidade unidade) {
-    	unidades.add(unidade);
+        unidades.add(unidade);
         this.populacao += 1;
     }
-    
+
     public void removerUnidade(Unidade unidade) {
-		unidades.remove(unidade);
-		this.populacao -= 1;
-		this.verificaExtinta();
+        unidades.remove(unidade);
+        this.populacao -= 1;
+        this.verificaExtinta();
     }
 
     public void adicionarConstrucao(Construcao construcao) {
@@ -64,37 +70,38 @@ public class Raca {
         this.diminuirSuprimentos(construcao.getCusto());
         this.calculaCapacidadePopulacional();
     }
-    
+
     public void removerConstrucao(Construcao construcao) {
-    	construcoes.remove(construcao);
-    	this.calculaCapacidadePopulacional();
-    	this.verificaExtinta();
+        construcoes.remove(construcao);
+        this.calculaCapacidadePopulacional();
+        this.verificaExtinta();
     }
-    
+
     public void verificaExtinta() {
-    	if(construcoes.size() == 0 && populacao == 0) {
-    		this.extinguirRaca();
-    	}
+        if (construcoes.size() == 0 && populacao == 0) {
+            this.extinguirRaca();
+        }
     }
-    
+
     private void extinguirRaca() {
-    	this.extinta = true;
-    	String raca;
-    	if(this.tipo == 'H')
-    		raca = "humana";
-    	else
-    		raca = "orc";
-    	System.out.println("A raça " + raca + " foi extinta!");
+        this.extinta = true;
+        String raca;
+        if (this.tipo == 'H') {
+            raca = "humana";
+        } else {
+            raca = "orc";
+        }
+        System.out.println("A raça " + raca + " foi extinta!");
     }
 
     private void calculaCapacidadePopulacional() {
-    	int capacidade = 0;
+        int capacidade = 0;
         for (Construcao construcao : construcoes) {
             if (construcao.getEstado()) {
                 if (construcao instanceof Casa) {
-                	capacidade = capacidade + 2;
+                    capacidade = capacidade + 2;
                 } else if (construcao instanceof Centro) {
-                	capacidade = capacidade + 10;
+                    capacidade = capacidade + 10;
                 }
             }
         }
@@ -102,33 +109,34 @@ public class Raca {
     }
 
     public boolean podeCriar(Unidade unidade) {
-    	if(this.getExtinta()) {
-    		System.out.println("Esta raca esta extinta e nao pode criar unidades.");
-    		return false;
-    	}
-        if(populacao >= capacidadePopulacional) {
-        	System.out.println("A quantidade maxima da populacao foi atingida.");
-        	return false;
+        if (this.getExtinta()) {
+            System.out.println("Esta raca esta extinta e nao pode criar unidades.");
+            return false;
+        }
+        if (populacao >= capacidadePopulacional) {
+            System.out.println("A quantidade maxima da populacao foi atingida.");
+            return false;
         }
         if (!this.calculaSuprimentos(unidade.getCusto())) {
-			System.out.println("Recursos nao sao suficientes!");
-			return false;
-		}
+            System.out.println("Recursos nao sao suficientes!");
+            return false;
+
+        }
         return true;
     }
-    
+
     public boolean podeConstruir(Construcao construcao) {
-    	if(this.getExtinta()) {
-    		System.out.println("Esta raca esta extinta e nao pode construir.");
-    		return false;
-    	}
-    	if (!this.calculaSuprimentos(construcao.getCusto())) {
-			System.out.println("Recursos nao sao suficientes!");
-			return false;
-		}
-    	return true;
+        if (this.getExtinta()) {
+            System.out.println("Esta raca esta extinta e nao pode construir.");
+            return false;
+        }
+        if (!this.calculaSuprimentos(construcao.getCusto())) {
+            System.out.println("Recursos nao sao suficientes!");
+            return false;
+        }
+        return true;
     }
-    
+
     /**
      * Adiciona suprimentos.
      *
@@ -145,8 +153,7 @@ public class Raca {
     }
 
     /**
-     * Diminui os suprimentos da raça com base no custo
-     * do objeto criado.
+     * Diminui os suprimentos da raça com base no custo do objeto criado.
      *
      * @param Custo
      */
@@ -166,12 +173,12 @@ public class Raca {
      * @param mana
      */
     public void diminuirSuprimentosEspecificos(int comida, int madeira, int ouro, int mana) {
-    	this.comida -= comida;
+        this.comida -= comida;
         this.madeira -= madeira;
         this.ouro -= ouro;
         this.mana -= mana;
     }
-    
+
     public boolean calculaSuprimentos(Custo custo) {
         if (this.comida >= custo.getComida() && this.madeira >= custo.getMadeira()
                 && this.ouro >= custo.getOuro() && this.mana >= custo.getMana()) {
@@ -179,7 +186,6 @@ public class Raca {
         }
         return false;
     }
-    
 
     public Unidade getUnidade(int posicao) {
         return unidades.get(posicao);
@@ -188,7 +194,7 @@ public class Raca {
     public Construcao getConstrucao(int posicao) {
         return construcoes.get(posicao);
     }
-    
+
     /**
      * @return the comida
      */
@@ -216,31 +222,31 @@ public class Raca {
     public int getOuro() {
         return ouro;
     }
-    
+
     public char getTipo() {
-    	return tipo;
+        return tipo;
     }
 
     public boolean getExtinta() {
-    	return this.extinta;
+        return this.extinta;
     }
-    
+
     public void relatorio() {
-    	System.out.println("###################");
-    	for(Unidade unidade : unidades) {
-    		System.out.println(unidade);
-    	}
-    	for(Construcao construcao : construcoes) {
-    		System.out.println(construcao);
-    	}
-    	System.out.println("###################");
+        System.out.println("###################");
+        for (Unidade unidade : unidades) {
+            System.out.println(unidade);
+        }
+        for (Construcao construcao : construcoes) {
+            System.out.println(construcao);
+        }
+        System.out.println("###################");
     }
-    
+
     public void status() {
-    	System.out.println("##########################");
-    	System.out.println("STATUS DE RAÇA (" + this.tipo + ")");
-    	System.out.println("População: " + populacao + "/" + capacidadePopulacional);
-    	System.out.println("Construções: " + construcoes.size());
+        System.out.println("##########################");
+        System.out.println("STATUS DE RAÇA (" + this.tipo + ")");
+        System.out.println("População: " + populacao + "/" + capacidadePopulacional);
+        System.out.println("Construções: " + construcoes.size());
         System.out.println("Comida: " + getComida());
         System.out.println("Madeira: " + getMadeira());
         System.out.println("Ouro: " + getOuro());
