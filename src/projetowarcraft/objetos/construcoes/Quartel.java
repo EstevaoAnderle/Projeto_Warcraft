@@ -37,8 +37,8 @@ public class Quartel extends Construcao {
     
     public void criaGrifo() {
     	if(this.raca.getTipo() != 'H') {
-    		System.out.println("Apenas humanos podem gerar unidades do tipo Grifo.");
-    		return;
+            System.out.println("Apenas humanos podem gerar unidades do tipo Grifo.");
+            return;
     	}
         this.cria((new Grifo(raca, posicao)));
     }

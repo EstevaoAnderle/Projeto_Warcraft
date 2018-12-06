@@ -21,7 +21,7 @@ public abstract class Unidade extends Objeto implements Ataque {
 
     /**
      * Move a unidade conforme direcao informada,
-     * levando em consideração velocidade da mesma.
+     * levando em consideracaoï¿½a velocidade da mesma.
      *
      */
     public void mover(String direcao) {

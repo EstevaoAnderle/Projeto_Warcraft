@@ -24,7 +24,7 @@ public class Grifo extends Unidade {
     			super.atacar(alvoProximo);
     		}
     	}
-    	//TODO: verificar se deve danificar as construções próximas a 3m também
+    	//TODO: verificar se deve danificar as construcoes proximas a 3m tambem
     	super.atacar(alvo);
     }
 }

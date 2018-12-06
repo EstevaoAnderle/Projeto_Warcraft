@@ -25,21 +25,19 @@ public class Raca {
     public Raca(char tipo, Posicao posicao, int comida, int madeira, int ouro, int mana) {
         this.tipo = tipo;
         adicionarConstrucao(new Centro(this, posicao));
-//        construcoes.add(new Centro(this, posicao));
         adicionarUnidade(new Campones(this, posicao));
         adicionarUnidade(new Campones(this, posicao));
         adicionarUnidade(new Campones(this, posicao));
         adicionarUnidade(new Campones(this, posicao));
         adicionarUnidade(new Campones(this, posicao));
-//        unidades.add(new Campones(this, posicao));
-//        unidades.add(new Campones(this, posicao));
-//        unidades.add(new Campones(this, posicao));
-//        unidades.add(new Campones(this, posicao));
-//        unidades.add(new Campones(this, posicao));
         this.adicionarSuprimentos(comida, madeira, ouro, mana);
         this.calculaCapacidadePopulacional();
     }
 
+    /**
+     * Retorna unidades.
+     * @return unidades
+     */
     public ArrayList<Unidade> getUnidades() {
         return unidades;
     }

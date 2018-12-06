@@ -20,10 +20,6 @@ public class ProjetoWarcraft {
         Raca humanos = new Raca('H', Mapa.getPosicao(0, 0), 500, 500, 500, 15);
         Centro centroHumanos = (Centro) humanos.getConstrucao(0);
 
-        centroHumanos.criaCampones();
-        centroHumanos.criaCampones();
-        centroHumanos.criaCampones();
-        centroHumanos.criaCampones();
 
         Campones campones1 = (Campones) humanos.getUnidade(0);
         campones1.constroi(Mapa.getPosicao(1, 0), "torre");
@@ -34,7 +30,8 @@ public class ProjetoWarcraft {
         campones1.mover("norte");
 
         quartel.criaGrifo();
-        Grifo grifo = (Grifo) humanos.getUnidades().get(humanos.getUnidades().size() - 1);
+        humanos.relatorio();
+        Grifo grifo = (Grifo) humanos .getUnidades().get(humanos.getUnidades().size() - 1);
 
         /* ############################# */
         Raca orcs = new Raca('O', Mapa.getPosicao(3, 0), 500, 500, 500, 15);
