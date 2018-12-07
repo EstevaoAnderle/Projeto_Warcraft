@@ -1,9 +1,8 @@
 package projetowarcraft.objetos;
 
 /**
- * Armazena o custo de um objeto e faz
- * as devidas comparações para sua criação.
- * 
+ * Armazena o custo de um objeto e faz as devidas comparações para sua criação.
+ *
  * @author Estevao Anderle, Rafael de Paula
  */
 public class Custo {
@@ -21,18 +20,38 @@ public class Custo {
     }
 
     //getters
+    /**
+     * Retorna a quantidade de comida disponível na raça.
+     *
+     * @return comida
+     */
     public int getComida() {
         return comida;
     }
 
+    /**
+     * Retorna a quantidade de madeira disponível na raça.
+     *
+     * @return madeira
+     */
     public int getMadeira() {
         return madeira;
     }
 
+    /**
+     * Retorna a quantidade de ouro disponível na raça.
+     *
+     * @return ouro
+     */
     public int getOuro() {
         return ouro;
     }
 
+    /**
+     * Retorna a quantidade de mana disponível na raça.
+     *
+     * @return mana
+     */
     public int getMana() {
         return mana;
     }

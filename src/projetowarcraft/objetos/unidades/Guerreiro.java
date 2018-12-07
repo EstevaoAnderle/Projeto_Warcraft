@@ -1,10 +1,15 @@
 package projetowarcraft.objetos.unidades;
 
 import projetowarcraft.mapa.Posicao;
-import projetowarcraft.objetos.Ataque;
 import projetowarcraft.objetos.Custo;
 import projetowarcraft.racas.Raca;
 
+/**
+ * Classe onde são tratados todos métodos e funcionalidades da unidade
+ * "Guerreiro"
+ *
+ * @author Estevao Anderle, Rafael de Paula
+ */
 public class Guerreiro extends Unidade {
 
     public Guerreiro(Raca raca, Posicao posicao) {

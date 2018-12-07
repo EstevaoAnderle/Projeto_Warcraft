@@ -6,10 +6,15 @@ import projetowarcraft.objetos.Custo;
 import projetowarcraft.objetos.Objeto;
 import projetowarcraft.racas.Raca;
 
+/**
+ * Classe onde são tratados todos métodos das unidades.
+ *
+ * @author Estevao Anderle, Rafael de Paula
+ */
 public abstract class Unidade extends Objeto implements Ataque {
 
-    private double velocidade;
-    private int armadura;
+    private final double velocidade;
+    private final int armadura;
 
     public Unidade(String imagem, Custo custo, boolean estado, int hp,
             int pontosAtaque, double alcance, Raca raca, Posicao posicao,
@@ -20,9 +25,10 @@ public abstract class Unidade extends Objeto implements Ataque {
     }
 
     /**
-     * Move a unidade conforme direcao informada,
-     * levando em consideracao�a velocidade da mesma.
+     * Move a unidade conforme direcao informada, levando em consideracao a
+     * velocidade da mesma.
      *
+     * @param direcao - direcao na qual o objeto estará se movendo.
      */
     public void mover(String direcao) {
 
@@ -49,28 +55,27 @@ public abstract class Unidade extends Objeto implements Ataque {
         }
 
     }
-    
+
     @Override
     public void verificaMorte() {
-    	if(this.hp <= 0) {
-    		raca.removerUnidade(this);
-    	}
-    }
-    
-    @Override
-    public void atacar(Objeto alvo) {
-    	this.atacar(this, alvo);
-    }
-    
-    @Override
-    public void recebeDano(int pontos) {
-    	pontos -= this.armadura;
-    	super.recebeDano(pontos);
-    }
-    
-    public int getArmadura() {
-    	return this.armadura;
+        if (this.hp <= 0) {
+            raca.removerUnidade(this);
+        }
     }
 
+    @Override
+    public void atacar(Objeto alvo) {
+        this.atacar(this, alvo);
+    }
+
+    @Override
+    public void recebeDano(int pontos) {
+        pontos -= this.armadura;
+        super.recebeDano(pontos);
+    }
+
+    public int getArmadura() {
+        return this.armadura;
+    }
 
 }

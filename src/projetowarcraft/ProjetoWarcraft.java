@@ -2,7 +2,6 @@ package projetowarcraft;
 
 import projetowarcraft.racas.*;
 import projetowarcraft.mapa.*;
-import projetowarcraft.objetos.*;
 import projetowarcraft.objetos.construcoes.*;
 import projetowarcraft.objetos.unidades.*;
 
@@ -13,13 +12,9 @@ import projetowarcraft.objetos.unidades.*;
  */
 public class ProjetoWarcraft {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         Raca humanos = new Raca('H', Mapa.getPosicao(0, 0), 500, 500, 500, 15);
         Centro centroHumanos = (Centro) humanos.getConstrucao(0);
-
 
         Campones campones1 = (Campones) humanos.getUnidade(0);
         campones1.constroi(Mapa.getPosicao(1, 0), "torre");
@@ -31,7 +26,7 @@ public class ProjetoWarcraft {
 
         quartel.criaGrifo();
         humanos.relatorio();
-        Grifo grifo = (Grifo) humanos .getUnidades().get(humanos.getUnidades().size() - 1);
+        Grifo grifo = (Grifo) humanos.getUnidades().get(humanos.getUnidades().size() - 1);
 
         /* ############################# */
         Raca orcs = new Raca('O', Mapa.getPosicao(3, 0), 500, 500, 500, 15);

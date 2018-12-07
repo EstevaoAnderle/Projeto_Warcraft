@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Guarda todas as posicoes dos objetos presentes no jogo
+ *
  * @author Estevao Anderle, Rafael de Paula
  */
 public class Mapa {
@@ -12,7 +13,8 @@ public class Mapa {
 
     /**
      * Acrescenta uma posicao mapa
-     * @param posicao 
+     *
+     * @param posicao - posição do objeto
      * @return a propria posicao adicionada
      */
     private static Posicao addPosicao(double x, double y) {
@@ -22,17 +24,17 @@ public class Mapa {
     }
 
     /**
-     * Retorna o objeto de uma posicao desejada. Se ele nao existir,
-     * cria um novo.
-     * 
-     * @param x
-     * @param y
+     * Retorna o objeto de uma posicao desejada. Se ele nao existir, cria um
+     * novo.
+     *
+     * @param x - x que será retornado
+     * @param y - y que será retornado
      * @return posicao com X,Y desejados
      */
     public static Posicao getPosicao(double x, double y) {
-        for(Object p : Mapa.posicoes){
+        for (Object p : Mapa.posicoes) {
             Posicao pos = (Posicao) p;
-            if(pos.getX() == x && pos.getY() == y){
+            if (pos.getX() == x && pos.getY() == y) {
                 return pos;
             }
         }

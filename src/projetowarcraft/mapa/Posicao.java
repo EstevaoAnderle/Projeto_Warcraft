@@ -15,16 +15,16 @@ public class Posicao extends Point2D {
     public Posicao(double x, double y) {
         this.setLocation(x, y);
     }
-    
+
     @Override
     public String toString() {
-    	return "(" + this.x + ", " + this.y + ")";
+        return "(" + this.x + ", " + this.y + ")";
     }
 
     /**
      * Move o objeto para o norte.
      *
-     * @param velocidade
+     * @param velocidade - velocidade do objeto
      * @return a nova posicao do objeto no mapa
      */
     public Posicao moverParaNorte(double velocidade) {
@@ -34,7 +34,7 @@ public class Posicao extends Point2D {
     /**
      * Move o objeto para o sul.
      *
-     * @param velocidade
+     * @param velocidade - velocidade do objeto
      * @return a nova posicao do objeto no mapa
      */
     public Posicao moverParaSul(double velocidade) {
@@ -49,7 +49,7 @@ public class Posicao extends Point2D {
     /**
      * Move o objeto para o leste.
      *
-     * @param velocidade
+     * @param velocidade - velocidade do objeto
      * @return a nova posicao do objeto no mapa
      */
     public Posicao moverParaLeste(double velocidade) {
@@ -59,14 +59,14 @@ public class Posicao extends Point2D {
     /**
      * Move o objeto para o oeste.
      *
-     * @param velocidade
+     * @param velocidade - velocidade do objeto
      * @return a nova posicao do objeto no mapa
      */
     public Posicao moverParaOeste(double velocidade) {
         if ((getX() - velocidade) > 0) {
             return Mapa.getPosicao(this.x - velocidade, this.y);
         } else {
-        	System.out.println("Nao e possivel realizar essa acao.");
+            System.out.println("Nao e possivel realizar essa acao.");
             return this;
         }
     }
@@ -74,7 +74,7 @@ public class Posicao extends Point2D {
     /**
      * Define a localizacao X do objeto
      *
-     * @param x
+     * @param x - posição X do objeto
      */
     public void setX(double x) {
         this.x = x;
@@ -83,7 +83,7 @@ public class Posicao extends Point2D {
     /**
      * Define a localizacao Y do objeto
      *
-     * @param y
+     * @param y - posição Y do objeto
      */
     public void setY(double y) {
         this.y = y;
